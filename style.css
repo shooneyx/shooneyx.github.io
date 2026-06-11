@@ -1,0 +1,89 @@
+/* Asegura que el body use todo el alto y elimina márgenes rebeldes */
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* Elimina el margen inferior del contenedor de las tarjetas y footer */
+.containerCard {
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #94906b;
+    overflow: hidden;
+    margin-bottom: 0 !important; /* <--- Esto quita el espacio inferior de la caja principal */
+}
+
+/* El resto de tu CSS se queda igual */
+.fuente {
+    font-family: "Lobster Two";
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.holographic-card {
+    width: 100%;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    transition: all 0.5s ease;
+}
+
+.holographic-card h2 {
+    color: #0ff;
+    font-size: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.holographic-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+            0deg,
+            transparent,
+            transparent 30%,
+            rgb(255 255 255 / 0.3)
+    );
+    transform: rotate(-45deg);
+    transition: all 0.5s ease;
+    opacity: 0;
+}
+
+.holographic-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0,255,255,0.5);
+}
+
+.holographic-card:hover::before {
+    opacity: 1;
+    transform: rotate(-45deg) translateY(100%);
+}
+
+header img {
+    image-rendering: pixelated;
+}
+h1 {
+    font-family: "Amatic SC", sans-serif;
+}
+.qr{
+    width: 200px;
+    height: 200px;
+}
+#vota1, #vota{
+    border-color: #94906b;
+    color: #94906b;
+}
+
+footer {
+    background-color: #94906b;
+    color: white;
+}
